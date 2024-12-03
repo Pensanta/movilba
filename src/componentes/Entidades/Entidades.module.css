@@ -1,9 +1,31 @@
 /* src/componentes/Entidades/Entidades.module.css */
 /* Autor: Alessio Renan Aguirre Pimentel también conocido como Elazar Pimentel */
 
+.pageContainer {
+  padding: 2rem;
+}
+
+.filterContainer {
+  margin-bottom: 2rem;
+}
+
+.filterSelect {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--color-dark-blue);
+  border-radius: 4px;
+  background-color: var(--color-gray);
+  color: var(--color-primary-text);
+  min-width: 200px;
+  cursor: pointer;
+}
+
+.filterSelect:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
 
 .container {
-  padding: 2rem;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
