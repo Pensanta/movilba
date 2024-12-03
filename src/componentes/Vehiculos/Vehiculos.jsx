@@ -2,34 +2,50 @@
 // Autor: Alessio Renan Aguirre Pimentel también conocido como Elazar Pimentel
 
 
-// src/componentes/Vehiculos/Vehiculos.jsx
 import React, { useState, useEffect } from 'react';
 import { getVehiculos } from '../../servicios/apiService';
+import styles from './Vehiculos.module.css';
 
-const Vehiculos = ({ tipo }) => {
-  const [vehiculosFiltrados, setVehiculosFiltrados] = useState([]);
+const Vehiculos = () => {
+  const [vehiculos, setVehiculos] = useState([]);
 
   useEffect(() => {
     const fetchVehiculos = async () => {
       try {
-        const vehiculos = await getVehiculos();
-        const filtrados = vehiculos.filter((vehiculo) => vehiculo.tipoNombre === tipo);
-        setVehiculosFiltrados(filtrados);
+        const vehiculosData = await getVehiculos();
+        setVehiculos(vehiculosData);
       } catch (error) {
         console.error('Error al obtener los vehículos:', error);
       }
     };
     fetchVehiculos();
-  }, [tipo]);
+  }, []);
 
   return (
-    <div>
-      <h2>Gestión de {tipo}</h2>
-      <ul>
-        {vehiculosFiltrados.map((vehiculo) => (
-          <li key={vehiculo.id}>Placa: {vehiculo.placa}</li>
-        ))}
-      </ul>
+    <div className="container">
+      <h2>Gestión de Vehículos</h2>
+      <table className={styles.table}>
+        <thead>
+          <tr>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Año</th>
+            <th>Placa</th>
+            <th>Tipo</th>
+          </tr>
+        </thead>
+        <tbody>
+          {vehiculos.map((vehiculo) => (
+            <tr key={vehiculo.id}>
+              <td>{vehiculo.marcaVehiculo}</td>
+              <td>{vehiculo.modelo}</td>
+              <td>{vehiculo.año}</td>
+              <td>{vehiculo.placa}</td>
+              <td>{vehiculo.tipoNombre}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

@@ -1,2 +1,31 @@
 /* src/componentes/Vehiculos/Vehiculos.module.css */
 /* Autor: Alessio Renan Aguirre Pimentel también conocido como Elazar Pimentel */
+
+
+.container {
+    padding: 2rem;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  
+  .table th,
+  .table td {
+    border: 1px solid var(--color-dark-blue);
+    padding: 0.75rem;
+    text-align: left;
+    font-size: 1rem;
+  }
+  
+  .table th {
+    background-color: var(--color-yellow);
+    color: var(--color-dark-blue);
+  }
+  
+  .table tr:nth-child(even) {
+    background-color: var(--color-gray);
+  }
+  
