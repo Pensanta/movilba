@@ -1,0 +1,25 @@
+/* src/componentes/ErrorMessage/ErrorMessage.module.css */
+/* Autor: Alessio Renan Aguirre Pimentel también conocido como Elazar Pimentel */
+
+.errorContainer {
+    background-color: var(--color-error);
+    color: var(--color-off-white);
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .icon {
+    width: 24px;
+    height: 24px;
+    fill: var(--color-off-white);
+    margin-right: 10px;
+  }
+  
+  .message {
+    margin: 0;
+    font-weight: 700;
+  }
+  

@@ -1,0 +1,207 @@
+/* src/estilos/styles.css */
+
+/* Variables de Color */
+:root {
+  /* Primary Colors */
+  --color-yellow: #FFD200; /* Brand Yellow */
+  --color-dark-blue: #2C2A47; /* Dark Blue */
+  --color-gray: #F2F2F2; /* Neutral Gray */
+
+  /* Text Colors */
+  --color-primary-text: #2C2A47; /* Primary Text Color */
+  --color-secondary-text: #5E5C70; /* Secondary Text Color */
+  --color-light-text: #FFFFFF; /* Light Text on Dark Backgrounds */
+
+  /* Accent Colors */
+  --color-accent: #0097A7; /* Link/Highlight */
+  --color-accent-hover: #007F8A; /* Darker accent for hover states */
+
+  /* Feedback Colors */
+  --color-success: #4CAF50; /* Green */
+  --color-warning: #FF9800; /* Orange */
+  --color-error: #F44336;   /* Red */
+}
+
+/* Modo Oscuro */
+[data-theme="dark"] {
+  --color-yellow: #FFD200;
+  --color-dark-blue: #1C1B29;
+  --color-gray: #3A3A3A;
+  --color-primary-text: #FFFFFF;
+  --color-secondary-text: #B0B0B0;
+  --color-light-text: #FFFFFF;
+  --color-accent: #80DEEA;
+  --color-accent-hover: #4DD0E1;
+
+  --color-success: #66BB6A;
+  --color-warning: #FFA726;
+  --color-error: #EF5350;
+}
+
+/* Tipografía */
+body, html {
+  font-family: 'Roboto', 'Open Sans', Arial, sans-serif;
+  color: var(--color-primary-text);
+  background-color: var(--color-gray);
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Headings */
+h1 {
+  font-size: 2.5rem; /* 40px */
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem; /* 32px */
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+h3 {
+  font-size: 1.75rem; /* 28px */
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+h4 {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+p, span, li {
+  font-size: 1rem; /* 16px */
+  font-weight: 400;
+  margin-bottom: 1em;
+}
+
+/* Links */
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover, a:focus {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+}
+
+/* Buttons */
+.button-primary {
+  background-color: var(--color-yellow);
+  color: var(--color-dark-blue);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.button-primary:hover {
+  background-color: #FFCB00; /* Slightly darker yellow */
+}
+
+.button-primary:focus {
+  outline: 2px solid var(--color-accent);
+}
+
+.button-primary:disabled {
+  background-color: var(--color-gray);
+  cursor: not-allowed;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Grid System */
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+.grid-2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 768px) {
+  .grid-2-cols, .grid-3-cols {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Cards */
+.card {
+  background-color: var(--color-gray);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 6px rgba(44, 42, 71, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 6px 10px rgba(44, 42, 71, 0.15);
+}
+
+.card h3, .card h4 {
+  color: var(--color-primary-text);
+}
+
+.card p {
+  color: var(--color-secondary-text);
+}
+
+/* Inputs */
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--color-secondary-text);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+  border-color: var(--color-accent);
+  outline: none;
+}
+
+/* Error Message */
+.error-message {
+  color: var(--color-error);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+.error-message svg {
+  margin-right: 8px;
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  body, html {
+    background-color: #000;
+    color: #FFF;
+  }
+}
+
+/* Accessibility */
+body, html {
+  font-size: 100%;
+}

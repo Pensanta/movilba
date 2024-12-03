@@ -1,0 +1,10 @@
+/* src/componentes/Footer.module.css */
+/* Autor: Alessio Renan Aguirre Pimentel también conocido como Elazar Pimentel */
+
+.footer {
+  background-color: var(--color-dark-blue);
+  color: var(--color-light-text);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.875rem;
+}

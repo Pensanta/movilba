@@ -1,0 +1,25 @@
+/* src/componentes/Header.module.css */
+/* Autor: Alessio Renan Aguirre Pimentel también conocido como Elazar Pimentel */
+
+.header {
+  background-color: var(--color-dark-blue);
+  color: var(--color-light-text);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 1rem;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
