@@ -8,7 +8,7 @@
 .vehiculosContainer {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 1rem;
   margin-top: 2rem;
 }
 
@@ -16,12 +16,15 @@
   background-color: var(--color-gray);
   border-radius: 8px;
   padding: 1rem;
-  width: 250px;
+  flex: 1 1 calc(25% - 2rem);
+  box-sizing: border-box;
   transition: background-color 0.3s ease;
+  border: 1px solid var(--color-dark-blue);
 }
 
 .card:hover {
   background-color: #E0E0E0;
+  border-color: var(--color-accent);
 }
 
 .card h4 {
@@ -33,4 +36,17 @@
 .card p {
   margin: 0.5rem 0 0;
   color: var(--color-secondary-text);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .card {
+    flex: 1 1 calc(50% - 2rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    flex: 1 1 100%;
+  }
 }
