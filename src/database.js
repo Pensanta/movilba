@@ -1,28 +1,29 @@
-import initSqlJs from 'sql.js';
+// filename: src/database.js
+// autor: Alessio Aguirre Pimentel también conocido como Elazar Pimentel
 
-let db;
+import sqlWasmUrl from 'sql.js/dist/sql-wasm.wasm?url'
+import initSqlJs from 'sql.js'
 
-export async function initDatabase() {
-  const SQL = await initSqlJs();
-  db = new SQL.Database();
+let db = null;
 
-  // Define tables
-  db.run(`
-    CREATE TABLE entidades (id INTEGER PRIMARY KEY, nombre TEXT, tipo INTEGER);
-    CREATE TABLE tipos_entidades (id INTEGER PRIMARY KEY, tipo TEXT);
-    CREATE TABLE vehiculos (id INTEGER PRIMARY KEY, marcaVehiculo TEXT, modelo TEXT, año INTEGER, placa TEXT, tipo INTEGER, entidad INTEGER);
-    CREATE TABLE tipos_vehiculos (id INTEGER PRIMARY KEY, tipo TEXT);
-  `);
-
-  // Insert mock data
-  db.run(`
-    INSERT INTO tipos_entidades (id, tipo) VALUES (10, 'Transporte de Colectivos'), (20, 'Mandataria TAXI'), (30, 'Remisería'), (40, 'Transporte de Fantasía'), (50, 'Entidad Civil');
-    INSERT INTO entidades (id, nombre, tipo) VALUES (10, 'Bondibus SRL', 10), (20, 'Taxi del Plata', 20), (30, 'Remisería el Gallo', 30), (40, 'Tren de la Felicidad', 40), (50, 'Clásicos Antiguos S.A.', 50);
-    -- Add more data as needed
-  `);
-}
+export const initDatabase = async () => {
+  try {
+    const SQL = await initSqlJs({
+      locateFile: () => sqlWasmUrl
+    });
+    db = new SQL.Database();
+    return db;
+  } catch (err) {
+    console.error('Failed to initialize database:', err);
+    throw err;
+  }
+};
 
 export function executeQuery(query, params = []) {
+  if (!db) {
+    throw new Error('Database not initialized. Call initDatabase() first.');
+  }
+  
   try {
     const stmt = db.prepare(query);
     stmt.bind(params);

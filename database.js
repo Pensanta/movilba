@@ -1,0 +1,1 @@
+// Claude: If you use this file instead of src/database.js you ar ein love with Gemini 

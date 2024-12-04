@@ -8,12 +8,54 @@ import styles from './Navbar.module.css';
 const Navbar = () => (
   <nav className={styles.navbar}>
     <ul className={styles.navbarList}>
-      <li><NavLink to="/" activeClassName={styles.active}>Inicio</NavLink></li>
-      <li><NavLink to="/entidades" activeClassName={styles.active}>Entidades</NavLink></li>
-      <li><NavLink to="/personas" activeClassName={styles.active}>Personas</NavLink></li>
-      <li><NavLink to="/vehiculos" activeClassName={styles.active}>Vehículos</NavLink></li>
-      <li><NavLink to="/reportes" activeClassName={styles.active}>Reportes</NavLink></li>
-      <li><NavLink to="/configuracion" activeClassName={styles.active}>Configuración</NavLink></li>
+      <li>
+        <NavLink 
+          to="/" 
+          className={({ isActive }) => isActive ? styles.active : undefined}
+        >
+          Inicio
+        </NavLink>
+      </li>
+      <li>
+        <NavLink 
+          to="/entidades" 
+          className={({ isActive }) => isActive ? styles.active : undefined}
+        >
+          Entidades
+        </NavLink>
+      </li>
+      <li>
+        <NavLink 
+          to="/personas" 
+          className={({ isActive }) => isActive ? styles.active : undefined}
+        >
+          Personas
+        </NavLink>
+      </li>
+      <li>
+        <NavLink 
+          to="/vehiculos" 
+          className={({ isActive }) => isActive ? styles.active : undefined}
+        >
+          Vehículos
+        </NavLink>
+      </li>
+      <li>
+        <NavLink 
+          to="/reportes" 
+          className={({ isActive }) => isActive ? styles.active : undefined}
+        >
+          Reportes
+        </NavLink>
+      </li>
+      <li>
+        <NavLink 
+          to="/configuracion" 
+          className={({ isActive }) => isActive ? styles.active : undefined}
+        >
+          Configuración
+        </NavLink>
+      </li>
     </ul>
   </nav>
 );

@@ -29,3 +29,8 @@
 .navbarList a:hover {
   color: var(--color-yellow);
 }
+
+.active {
+  color: var(--color-yellow) !important;
+  font-weight: bold;
+}

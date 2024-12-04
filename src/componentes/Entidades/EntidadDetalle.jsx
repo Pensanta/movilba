@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import styles from './EntidadDetalle.module.css';
-import { getEntidadById, getVehiculosByEntidadId } from '../../servicios/apiService';
+import { getEntidadById, getVehiculosByEntidadId } from '../../servicios/apiService.js';
 
 const EntidadDetalle = () => {
   const { id } = useParams();
