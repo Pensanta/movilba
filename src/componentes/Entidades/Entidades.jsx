@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Entidades.module.css';
-import { fetchEntidades } from '../../servicios/apiService';
+import { getEntidades } from '../../services/apiService';
 
 const Entidades = () => {
   const [entidades, setEntidades] = useState([]);
@@ -14,7 +14,7 @@ const Entidades = () => {
   useEffect(() => {
     const loadEntidades = async () => {
       try {
-        const data = await fetchEntidades();
+        const data = await getEntidades();
         setEntidades(data);
       } catch (err) {
         setError(err.message);

@@ -3,7 +3,7 @@
 
 import React, { useState, useEffect } from 'react';
 import styles from './Personas.module.css';
-import { getPersonas } from '../../servicios/apiService';
+import { getPersonas } from '../../services/apiService';
 
 const Personas = () => {
   const [personas, setPersonas] = useState([]);

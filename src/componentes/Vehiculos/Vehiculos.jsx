@@ -3,7 +3,7 @@
 
 
 import React, { useState, useEffect } from 'react';
-import { getVehiculos } from '../../servicios/apiService';
+import { getVehiculos } from '../../services/apiService';
 import styles from './Vehiculos.module.css';
 
 const Vehiculos = () => {
